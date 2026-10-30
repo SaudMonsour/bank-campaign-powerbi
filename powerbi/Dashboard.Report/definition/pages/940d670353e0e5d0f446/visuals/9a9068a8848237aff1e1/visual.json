@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "9a9068a8848237aff1e1",
+  "position": {
+    "x": 30,
+    "y": 788,
+    "z": 4,
+    "width": 1298,
+    "height": 42,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Audience differences are descriptive. Review sample sizes and confidence intervals before designing a targeting test.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#5B57A6",
+                      "fontWeight": "normal"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Audience differences are descriptive. Review sample sizes and confidence intervals before designing a targeting test.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

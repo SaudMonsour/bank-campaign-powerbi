@@ -1,0 +1,23 @@
+{
+  "source_rows": 41188,
+  "clean_rows": 41188,
+  "duplicate_signatures_retained": 12,
+  "subscriptions": 4640,
+  "conversion_rate": 0.11265417111780131,
+  "average_duration_seconds": 258.2850101971448,
+  "average_campaign_contacts": 2.567592502670681,
+  "never_previously_contacted": 39673,
+  "unknown_values_source": {
+    "job": 330,
+    "marital": 80,
+    "education": 1731,
+    "default": 8597,
+    "housing": 990,
+    "loan": 990
+  },
+  "contact_records_with_unknown_fields": 10700,
+  "cleaning_policy": "Preserve all records. No customer identifier exists; exact signatures could be different customers, so flag the 12 repeated signatures rather than delete them.",
+  "pdays_policy": "999 is a structural never-contacted sentinel, converted to null DaysSincePrevious with an explicit PreviouslyContacted indicator. Not median-imputed.",
+  "time_scope": "Month and weekday are categories across the source period. No year or exact contact date exists; no fabricated calendar trend.",
+  "interpretation": "Conversion is observational, not causal campaign uplift. Duration is known after the call; it is not a valid pre-call predictor."
+}

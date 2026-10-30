@@ -1,0 +1,612 @@
+{
+  "name": "Dashboard",
+  "compatibilityLevel": 1567,
+  "model": {
+    "culture": "en-GB",
+    "sourceQueryCulture": "en-GB",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "expressions": [
+      {
+        "name": "DataRoot",
+        "kind": "m",
+        "expression": "\"C:\\PowerBI\\bank-campaign-powerbi\\data\\clean\\\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "description": "Absolute path to this repository data/clean folder, including trailing slash. Set before refresh."
+      }
+    ],
+    "tables": [
+      {
+        "name": "DimAgeBand",
+        "lineageTag": "c878c88d-a619-53de-89bd-c6a00f484028",
+        "columns": [
+          {
+            "name": "AgeBand",
+            "dataType": "string",
+            "sourceColumn": "AgeBand",
+            "summarizeBy": "none",
+            "lineageTag": "adaead42-9f68-5d88-8f56-b1bf376951c8",
+            "isKey": true,
+            "sortByColumn": "AgeBandOrder"
+          },
+          {
+            "name": "AgeBandOrder",
+            "dataType": "int64",
+            "sourceColumn": "AgeBandOrder",
+            "summarizeBy": "none",
+            "lineageTag": "858db97a-c0e2-5698-bbee-dc83aa5a444c",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimAgeBand",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataRoot & \"DimAgeBand.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    EmptyToNull = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                "    Typed = Table.TransformColumnTypes(EmptyToNull, {{\"AgeBand\", type text}, {\"AgeBandOrder\", Int64.Type}}, \"en-GB\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimContact",
+        "lineageTag": "a5380ab5-a971-50e3-af5e-312cef90e06d",
+        "columns": [
+          {
+            "name": "ContactChannel",
+            "dataType": "string",
+            "sourceColumn": "ContactChannel",
+            "summarizeBy": "none",
+            "lineageTag": "c375af57-375c-540c-bc8b-f763270593dc",
+            "isKey": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimContact",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataRoot & \"DimContact.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    EmptyToNull = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                "    Typed = Table.TransformColumnTypes(EmptyToNull, {{\"ContactChannel\", type text}}, \"en-GB\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimEducation",
+        "lineageTag": "90d4cc4b-1323-5c52-a220-24dc118e79eb",
+        "columns": [
+          {
+            "name": "Education",
+            "dataType": "string",
+            "sourceColumn": "Education",
+            "summarizeBy": "none",
+            "lineageTag": "d0ee22e7-6639-56f4-b2e3-9b5e71230c9a",
+            "isKey": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimEducation",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataRoot & \"DimEducation.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    EmptyToNull = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                "    Typed = Table.TransformColumnTypes(EmptyToNull, {{\"Education\", type text}}, \"en-GB\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimJob",
+        "lineageTag": "428c6a40-7f3f-5327-b880-570671e65f9a",
+        "columns": [
+          {
+            "name": "Job",
+            "dataType": "string",
+            "sourceColumn": "Job",
+            "summarizeBy": "none",
+            "lineageTag": "3fd2e00c-cc64-50e2-8fa7-59277460a407",
+            "isKey": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimJob",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataRoot & \"DimJob.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    EmptyToNull = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                "    Typed = Table.TransformColumnTypes(EmptyToNull, {{\"Job\", type text}}, \"en-GB\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimMonth",
+        "lineageTag": "eb59c884-bdc3-55e3-9aad-b647272138b0",
+        "columns": [
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month",
+            "summarizeBy": "none",
+            "lineageTag": "2fd66415-891a-5f3b-bb36-0ec7d903b4b7",
+            "isKey": true,
+            "sortByColumn": "MonthNumber"
+          },
+          {
+            "name": "MonthNumber",
+            "dataType": "int64",
+            "sourceColumn": "MonthNumber",
+            "summarizeBy": "none",
+            "lineageTag": "dd3930ce-bc8d-5b35-9d28-f12bd9870097"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimMonth",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataRoot & \"DimMonth.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    EmptyToNull = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                "    Typed = Table.TransformColumnTypes(EmptyToNull, {{\"Month\", type text}, {\"MonthNumber\", Int64.Type}}, \"en-GB\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactCampaign",
+        "lineageTag": "365c6381-b537-5d12-9258-b22299786ffd",
+        "columns": [
+          {
+            "name": "ContactRowKey",
+            "dataType": "int64",
+            "sourceColumn": "ContactRowKey",
+            "summarizeBy": "none",
+            "lineageTag": "11c8e3c6-59f3-5a6e-89fa-2aaa7ba667bd",
+            "isHidden": true
+          },
+          {
+            "name": "Age",
+            "dataType": "int64",
+            "sourceColumn": "Age",
+            "summarizeBy": "none",
+            "lineageTag": "873170b5-d6d5-5711-8d0f-be40fd691956"
+          },
+          {
+            "name": "Job",
+            "dataType": "string",
+            "sourceColumn": "Job",
+            "summarizeBy": "none",
+            "lineageTag": "68b55748-932b-51a8-995e-bfda4f4b8a70"
+          },
+          {
+            "name": "MaritalStatus",
+            "dataType": "string",
+            "sourceColumn": "MaritalStatus",
+            "summarizeBy": "none",
+            "lineageTag": "79913839-22ef-5ae0-9e06-84ebc000ea3c"
+          },
+          {
+            "name": "Education",
+            "dataType": "string",
+            "sourceColumn": "Education",
+            "summarizeBy": "none",
+            "lineageTag": "c68c3820-81f2-50bd-9c21-943be2706ae5"
+          },
+          {
+            "name": "CreditDefault",
+            "dataType": "string",
+            "sourceColumn": "CreditDefault",
+            "summarizeBy": "none",
+            "lineageTag": "9045cdf5-ea82-592f-9a20-abb5a77349bf"
+          },
+          {
+            "name": "HousingLoan",
+            "dataType": "string",
+            "sourceColumn": "HousingLoan",
+            "summarizeBy": "none",
+            "lineageTag": "1f6948d5-895e-597f-b687-9b86fb697536"
+          },
+          {
+            "name": "PersonalLoan",
+            "dataType": "string",
+            "sourceColumn": "PersonalLoan",
+            "summarizeBy": "none",
+            "lineageTag": "6609318d-3356-54eb-996d-425b354e6701"
+          },
+          {
+            "name": "ContactChannel",
+            "dataType": "string",
+            "sourceColumn": "ContactChannel",
+            "summarizeBy": "none",
+            "lineageTag": "05df9e11-3e31-5220-8e5b-07a67bb8fad1"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month",
+            "summarizeBy": "none",
+            "lineageTag": "cab07ea3-5a74-5598-9aa0-9cafc02ae8fb"
+          },
+          {
+            "name": "Weekday",
+            "dataType": "string",
+            "sourceColumn": "Weekday",
+            "summarizeBy": "none",
+            "lineageTag": "b280ba38-dbcc-5cca-ba67-fcd17a7208fc"
+          },
+          {
+            "name": "DurationSeconds",
+            "dataType": "int64",
+            "sourceColumn": "DurationSeconds",
+            "summarizeBy": "none",
+            "lineageTag": "5e54b9b4-4e41-5450-98b9-08c4f27e7d2a"
+          },
+          {
+            "name": "CampaignContacts",
+            "dataType": "int64",
+            "sourceColumn": "CampaignContacts",
+            "summarizeBy": "none",
+            "lineageTag": "1d17feda-237c-5d53-b965-bd5b290bc16c"
+          },
+          {
+            "name": "DaysSincePrevious",
+            "dataType": "double",
+            "sourceColumn": "DaysSincePrevious",
+            "summarizeBy": "none",
+            "lineageTag": "d95b4f18-854d-5cde-b04c-dbbc2ee59c9b"
+          },
+          {
+            "name": "PreviousContacts",
+            "dataType": "int64",
+            "sourceColumn": "PreviousContacts",
+            "summarizeBy": "none",
+            "lineageTag": "e890173c-0e65-539c-be02-f10e758e5baf"
+          },
+          {
+            "name": "PreviousOutcome",
+            "dataType": "string",
+            "sourceColumn": "PreviousOutcome",
+            "summarizeBy": "none",
+            "lineageTag": "3da62b8b-f000-5bd8-ae9b-204349cea351"
+          },
+          {
+            "name": "EmploymentVariationRate",
+            "dataType": "double",
+            "sourceColumn": "EmploymentVariationRate",
+            "summarizeBy": "none",
+            "lineageTag": "73c26cb6-a449-5336-9ea7-c26b7329a2a7"
+          },
+          {
+            "name": "ConsumerPriceIndex",
+            "dataType": "double",
+            "sourceColumn": "ConsumerPriceIndex",
+            "summarizeBy": "none",
+            "lineageTag": "571d2505-339a-56be-914e-fecd3b69aff3"
+          },
+          {
+            "name": "ConsumerConfidenceIndex",
+            "dataType": "double",
+            "sourceColumn": "ConsumerConfidenceIndex",
+            "summarizeBy": "none",
+            "lineageTag": "dd10d023-0e8c-54f6-b184-39ca76ead568"
+          },
+          {
+            "name": "Euribor3M",
+            "dataType": "double",
+            "sourceColumn": "Euribor3M",
+            "summarizeBy": "none",
+            "lineageTag": "f52c1fcd-7aa8-5ca2-b4e5-d2f81977941c"
+          },
+          {
+            "name": "EmploymentCount",
+            "dataType": "double",
+            "sourceColumn": "EmploymentCount",
+            "summarizeBy": "none",
+            "lineageTag": "b9be19ad-069b-5591-8fb7-57aef1349482"
+          },
+          {
+            "name": "SubscriptionOutcome",
+            "dataType": "string",
+            "sourceColumn": "SubscriptionOutcome",
+            "summarizeBy": "none",
+            "lineageTag": "df5e954e-9fd7-5324-a2db-e6f7ff48188e"
+          },
+          {
+            "name": "ExactDuplicateFlag",
+            "dataType": "int64",
+            "sourceColumn": "ExactDuplicateFlag",
+            "summarizeBy": "none",
+            "lineageTag": "8470aeb9-9ae8-5b03-8bad-803362288452"
+          },
+          {
+            "name": "PreviouslyContacted",
+            "dataType": "int64",
+            "sourceColumn": "PreviouslyContacted",
+            "summarizeBy": "none",
+            "lineageTag": "c943e672-e7e0-57c5-8961-dcc82252906e"
+          },
+          {
+            "name": "Subscribed",
+            "dataType": "int64",
+            "sourceColumn": "Subscribed",
+            "summarizeBy": "none",
+            "lineageTag": "690d2180-17b7-5180-aa2e-7a01794befa6"
+          },
+          {
+            "name": "AgeBand",
+            "dataType": "string",
+            "sourceColumn": "AgeBand",
+            "summarizeBy": "none",
+            "lineageTag": "f0c2acf3-f5ea-5f93-a969-c62659af87e1"
+          },
+          {
+            "name": "MonthNumber",
+            "dataType": "int64",
+            "sourceColumn": "MonthNumber",
+            "summarizeBy": "none",
+            "lineageTag": "2df72a29-da38-52da-ac77-8fa8bf708d27"
+          },
+          {
+            "name": "WeekdayOrder",
+            "dataType": "int64",
+            "sourceColumn": "WeekdayOrder",
+            "summarizeBy": "none",
+            "lineageTag": "2dd251d3-0378-5fd6-b660-91035bc5e4a2",
+            "isHidden": true
+          },
+          {
+            "name": "ContactIntensity",
+            "dataType": "string",
+            "sourceColumn": "ContactIntensity",
+            "summarizeBy": "none",
+            "lineageTag": "b8d7b10b-82f9-5c0d-a4ed-d4a3341c0cc0"
+          },
+          {
+            "name": "UnknownFieldCount",
+            "dataType": "int64",
+            "sourceColumn": "UnknownFieldCount",
+            "summarizeBy": "none",
+            "lineageTag": "240961cb-58f4-5b70-8aed-a8a3e77250da"
+          },
+          {
+            "name": "HasUnknown",
+            "dataType": "int64",
+            "sourceColumn": "HasUnknown",
+            "summarizeBy": "none",
+            "lineageTag": "321ed0f3-271c-5bdb-ba4b-574886f8f8ef"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactCampaign",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataRoot & \"FactCampaign.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    EmptyToNull = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                "    Typed = Table.TransformColumnTypes(EmptyToNull, {{\"ContactRowKey\", Int64.Type}, {\"Age\", Int64.Type}, {\"Job\", type text}, {\"MaritalStatus\", type text}, {\"Education\", type text}, {\"CreditDefault\", type text}, {\"HousingLoan\", type text}, {\"PersonalLoan\", type text}, {\"ContactChannel\", type text}, {\"Month\", type text}, {\"Weekday\", type text}, {\"DurationSeconds\", Int64.Type}, {\"CampaignContacts\", Int64.Type}, {\"DaysSincePrevious\", type number}, {\"PreviousContacts\", Int64.Type}, {\"PreviousOutcome\", type text}, {\"EmploymentVariationRate\", type number}, {\"ConsumerPriceIndex\", type number}, {\"ConsumerConfidenceIndex\", type number}, {\"Euribor3M\", type number}, {\"EmploymentCount\", type number}, {\"SubscriptionOutcome\", type text}, {\"ExactDuplicateFlag\", Int64.Type}, {\"PreviouslyContacted\", Int64.Type}, {\"Subscribed\", Int64.Type}, {\"AgeBand\", type text}, {\"MonthNumber\", Int64.Type}, {\"WeekdayOrder\", Int64.Type}, {\"ContactIntensity\", type text}, {\"UnknownFieldCount\", Int64.Type}, {\"HasUnknown\", Int64.Type}}, \"en-GB\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Contact Records",
+            "expression": "COUNTROWS(FactCampaign)",
+            "formatString": "#,0",
+            "displayFolder": "Performance",
+            "description": "Contact Records. Format: #,0. Definition: COUNTROWS(FactCampaign). See docs/METRIC_CONTRACT.md for denominator and interpretation limits.",
+            "lineageTag": "acea453c-d305-5eab-8eea-497cc6e9eef0"
+          },
+          {
+            "name": "Subscriptions",
+            "expression": "SUM(FactCampaign[Subscribed])",
+            "formatString": "#,0",
+            "displayFolder": "Performance",
+            "description": "Subscriptions. Format: #,0. Definition: SUM(FactCampaign[Subscribed]). See docs/METRIC_CONTRACT.md for denominator and interpretation limits.",
+            "lineageTag": "bbcafeac-e47e-51cd-b265-6abc2404ae28"
+          },
+          {
+            "name": "Conversion Rate",
+            "expression": "DIVIDE([Subscriptions], [Contact Records])",
+            "formatString": "0.0%",
+            "displayFolder": "Performance",
+            "description": "Conversion Rate. Format: 0.0%. Definition: DIVIDE([Subscriptions], [Contact Records]). See docs/METRIC_CONTRACT.md for denominator and interpretation limits.",
+            "lineageTag": "a04292ef-4380-51e7-9e31-307777ac8eb6"
+          },
+          {
+            "name": "Average Call Seconds",
+            "expression": "AVERAGE(FactCampaign[DurationSeconds])",
+            "formatString": "#,0.0",
+            "displayFolder": "Performance",
+            "description": "Average Call Seconds. Format: #,0.0. Definition: AVERAGE(FactCampaign[DurationSeconds]). See docs/METRIC_CONTRACT.md for denominator and interpretation limits.",
+            "lineageTag": "6833fe19-6904-56be-a335-c0b29a25fa5c"
+          },
+          {
+            "name": "Average Campaign Contacts",
+            "expression": "AVERAGE(FactCampaign[CampaignContacts])",
+            "formatString": "0.00",
+            "displayFolder": "Performance",
+            "description": "Average Campaign Contacts. Format: 0.00. Definition: AVERAGE(FactCampaign[CampaignContacts]). See docs/METRIC_CONTRACT.md for denominator and interpretation limits.",
+            "lineageTag": "13f3c98b-cd25-5a0c-9954-f2d841ad6c6d"
+          },
+          {
+            "name": "Previously Contacted Records",
+            "expression": "SUM(FactCampaign[PreviouslyContacted])",
+            "formatString": "#,0",
+            "displayFolder": "Performance",
+            "description": "Previously Contacted Records. Format: #,0. Definition: SUM(FactCampaign[PreviouslyContacted]). See docs/METRIC_CONTRACT.md for denominator and interpretation limits.",
+            "lineageTag": "7ebfcbf6-6b3c-5e74-8c25-e24f92ca74ab"
+          },
+          {
+            "name": "Previously Contacted Share",
+            "expression": "DIVIDE([Previously Contacted Records], [Contact Records])",
+            "formatString": "0.0%",
+            "displayFolder": "Performance",
+            "description": "Previously Contacted Share. Format: 0.0%. Definition: DIVIDE([Previously Contacted Records], [Contact Records]). See docs/METRIC_CONTRACT.md for denominator and interpretation limits.",
+            "lineageTag": "6381be1d-4971-5726-bda5-70d0a5115aff"
+          },
+          {
+            "name": "Not Recorded Records",
+            "expression": "SUM(FactCampaign[HasUnknown])",
+            "formatString": "#,0",
+            "displayFolder": "Quality and coverage",
+            "description": "Not Recorded Records. Format: #,0. Definition: SUM(FactCampaign[HasUnknown]). See docs/METRIC_CONTRACT.md for denominator and interpretation limits.",
+            "lineageTag": "ca6bd80a-750c-520c-9845-aba0dadf4356"
+          },
+          {
+            "name": "Not Recorded Share",
+            "expression": "DIVIDE([Not Recorded Records], [Contact Records])",
+            "formatString": "0.0%",
+            "displayFolder": "Quality and coverage",
+            "description": "Not Recorded Share. Format: 0.0%. Definition: DIVIDE([Not Recorded Records], [Contact Records]). See docs/METRIC_CONTRACT.md for denominator and interpretation limits.",
+            "lineageTag": "86b166c8-0058-5054-bea9-6016e4b51ed8"
+          },
+          {
+            "name": "Duplicate Signatures",
+            "expression": "SUM(FactCampaign[ExactDuplicateFlag])",
+            "formatString": "#,0",
+            "displayFolder": "Quality and coverage",
+            "description": "Duplicate Signatures. Format: #,0. Definition: SUM(FactCampaign[ExactDuplicateFlag]). See docs/METRIC_CONTRACT.md for denominator and interpretation limits.",
+            "lineageTag": "b355ede9-5c15-5a7f-bad7-a79a92e1383a"
+          },
+          {
+            "name": "Average Prior Gap Days",
+            "expression": "AVERAGE(FactCampaign[DaysSincePrevious])",
+            "formatString": "0.0",
+            "displayFolder": "Performance",
+            "description": "Average Prior Gap Days. Format: 0.0. Definition: AVERAGE(FactCampaign[DaysSincePrevious]). See docs/METRIC_CONTRACT.md for denominator and interpretation limits.",
+            "lineageTag": "14b8819e-475c-5147-99cc-9c351e0a6893"
+          },
+          {
+            "name": "Conversion CI Lower",
+            "expression": "VAR N = [Contact Records] VAR P = [Conversion Rate] VAR Z = 1.96 RETURN IF(N > 0, DIVIDE(P + Z*Z/(2*N) - Z*SQRT(DIVIDE(P*(1-P),N) + Z*Z/(4*N*N)), 1+Z*Z/N))",
+            "formatString": "0.0%",
+            "displayFolder": "Uncertainty",
+            "description": "Conversion CI Lower. Format: 0.0%. Definition: VAR N = [Contact Records] VAR P = [Conversion Rate] VAR Z = 1.96 RETURN IF(N > 0, DIVIDE(P + Z*Z/(2*N) - Z*SQRT(DIVIDE(P*(1-P),N) + Z*Z/(4*N*N)), 1+Z*Z/N)). See docs/METRIC_CONTRACT.md for denominator and interpretation limits.",
+            "lineageTag": "9c721d6a-021d-598a-8b6d-587e0324f6bc"
+          },
+          {
+            "name": "Conversion CI Upper",
+            "expression": "VAR N = [Contact Records] VAR P = [Conversion Rate] VAR Z = 1.96 RETURN IF(N > 0, DIVIDE(P + Z*Z/(2*N) + Z*SQRT(DIVIDE(P*(1-P),N) + Z*Z/(4*N*N)), 1+Z*Z/N))",
+            "formatString": "0.0%",
+            "displayFolder": "Uncertainty",
+            "description": "Conversion CI Upper. Format: 0.0%. Definition: VAR N = [Contact Records] VAR P = [Conversion Rate] VAR Z = 1.96 RETURN IF(N > 0, DIVIDE(P + Z*Z/(2*N) + Z*SQRT(DIVIDE(P*(1-P),N) + Z*Z/(4*N*N)), 1+Z*Z/N)). See docs/METRIC_CONTRACT.md for denominator and interpretation limits.",
+            "lineageTag": "e8a12015-7940-5279-af28-374f5e351405"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "3be0aa91-846f-5a69-a629-0ce62bba99bc",
+        "fromTable": "FactCampaign",
+        "fromColumn": "Job",
+        "toTable": "DimJob",
+        "toColumn": "Job",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "c4bf01d4-f23f-5c35-9bec-83b83b5fcb08",
+        "fromTable": "FactCampaign",
+        "fromColumn": "Education",
+        "toTable": "DimEducation",
+        "toColumn": "Education",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "48714de1-0613-5c6c-b2b5-816a13c0c9cd",
+        "fromTable": "FactCampaign",
+        "fromColumn": "ContactChannel",
+        "toTable": "DimContact",
+        "toColumn": "ContactChannel",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "ab552e5f-22b0-5b6a-a2b2-483b30ade486",
+        "fromTable": "FactCampaign",
+        "fromColumn": "Month",
+        "toTable": "DimMonth",
+        "toColumn": "Month",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "4d21e534-4b71-5e70-aeea-5c5620a9d091",
+        "fromTable": "FactCampaign",
+        "fromColumn": "AgeBand",
+        "toTable": "DimAgeBand",
+        "toColumn": "AgeBand",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      }
+    ]
+  }
+}

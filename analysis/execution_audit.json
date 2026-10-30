@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-30",
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_selected_files": [
+    "bank-additional-full.csv",
+    "bank-additional-names.txt",
+    "source_manifest.json"
+  ],
+  "hashes": {
+    "data/clean/DimAgeBand.csv": "b06f3c912aa875abd5fdd5c71c371929d595b7c1284ab069a96a0125c4086eab",
+    "data/clean/DimMonth.csv": "7f43e8ad41df0806fcd82f1b97ede63ff13e4bc025b82fcd87933accba241327",
+    "data/clean/DimJob.csv": "45830ecd118571db234036eda998aea0d5385fc3003f486ae6b0e0cff7082c15",
+    "data/clean/FactCampaign.csv": "ad92b8deb91ef3b349ba823849afe3da1d27feb18363029ddae5db3555d6dc76",
+    "data/clean/DimContact.csv": "bf817d5a30c335770043a0ae2253a39475b239ff29b9d6ea0bdc5dc55c436461",
+    "data/clean/DimEducation.csv": "d6b6050682228605ef9f849ab970b6d88f6ad58d8cab74b6f7b6a406962af219",
+    "data/raw/bank-additional-full.csv": "74adfc578bf77a7ff4bb1ba4a9f8709d9e3c6907342959c2c8416847e0afb4d8",
+    "data/raw/source_manifest.json": "dd4717b5021c772a3bf645209f4a88652fc15306a19ac0a1679e71f803578496",
+    "data/raw/bank-additional-names.txt": "10045462a4c026f858dffa159370c4270510230c1fc63c6c91ca51bba4b3df26"
+  },
+  "native_desktop_status": "Not executed",
+  "publication_status": "Prepared for matching public GitHub repository"
+}

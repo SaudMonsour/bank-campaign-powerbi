@@ -1,0 +1,5 @@
+ContactIntensity,ContactRecords,Subscriptions,ConversionRate,MeanDurationSeconds,Wilson95Lower,Wilson95Upper,SmallSampleFlag
+1 contact,17642,2300,0.130371,256.725428,0.125483,0.135420,False
+2–3 contacts,15911,1785,0.112187,276.442587,0.107376,0.117185,False
+4–6 contacts,5229,444,0.084911,239.458596,0.077657,0.092775,False
+7+ contacts,2406,111,0.046135,190.559435,0.038452,0.055265,False

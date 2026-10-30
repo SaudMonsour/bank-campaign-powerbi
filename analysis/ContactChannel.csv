@@ -1,0 +1,3 @@
+ContactChannel,ContactRecords,Subscriptions,ConversionRate,MeanDurationSeconds,Wilson95Lower,Wilson95Upper,SmallSampleFlag
+cellular,26144,3853,0.147376,263.527846,0.143131,0.151725,False
+telephone,15044,787,0.052313,249.173823,0.048868,0.055987,False

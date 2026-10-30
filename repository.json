@@ -1,0 +1,16 @@
+{
+  "name": "bank-campaign-powerbi",
+  "description": "Power BI campaign analytics with explicit missing-data handling, conversion diagnostics, segment uncertainty, and contact-quality analysis.",
+  "topics": [
+    "power-bi",
+    "data-cleaning",
+    "data-analysis",
+    "dax",
+    "power-query",
+    "star-schema",
+    "business-intelligence",
+    "uci"
+  ],
+  "visibility": "public",
+  "publication_status": "Published to the matching public GitHub repository"
+}

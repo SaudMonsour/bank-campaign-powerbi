@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "b9ba9698c2391d4eec75",
+  "position": {
+    "x": 30,
+    "y": 788,
+    "z": 4,
+    "width": 1298,
+    "height": 42,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "10,700 records contain an unknown field · retain all records; call duration is available only after contact.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#5B57A6",
+                      "fontWeight": "normal"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'10,700 records contain an unknown field · retain all records; call duration is available only after contact.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

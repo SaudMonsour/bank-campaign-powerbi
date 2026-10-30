@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "47e35ebc6d7f89d72869",
+  "position": {
+    "x": 30,
+    "y": 788,
+    "z": 4,
+    "width": 1298,
+    "height": 42,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "4,640 subscriptions from 41,188 records · 11.3% observed conversion; compare rates with sample sizes.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#5B57A6",
+                      "fontWeight": "normal"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'4,640 subscriptions from 41,188 records · 11.3% observed conversion; compare rates with sample sizes.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

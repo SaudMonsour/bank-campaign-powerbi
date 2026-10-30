@@ -1,0 +1,128 @@
+{
+  "project": "bank-campaign-powerbi",
+  "pages": [
+    {
+      "name": "Executive overview",
+      "id": "c89d210a649b8bc463cb",
+      "visuals": 16,
+      "kpis": [
+        "Contact Records",
+        "Subscriptions",
+        "Conversion Rate",
+        "Average Campaign Contacts"
+      ],
+      "charts": [
+        {
+          "type": "clusteredBarChart",
+          "title": "Conversion by contact channel"
+        },
+        {
+          "type": "clusteredColumnChart",
+          "title": "Contacts by month category"
+        },
+        {
+          "type": "clusteredBarChart",
+          "title": "Subscriptions by job group"
+        },
+        {
+          "type": "tableEx",
+          "title": "Channel comparison with uncertainty"
+        }
+      ]
+    },
+    {
+      "name": "Audience deep dive",
+      "id": "940d670353e0e5d0f446",
+      "visuals": 16,
+      "kpis": [
+        "Conversion Rate",
+        "Subscriptions",
+        "Contact Records",
+        "Previously Contacted Share"
+      ],
+      "charts": [
+        {
+          "type": "clusteredBarChart",
+          "title": "Conversion by job group"
+        },
+        {
+          "type": "clusteredColumnChart",
+          "title": "Conversion by age band"
+        },
+        {
+          "type": "clusteredBarChart",
+          "title": "Conversion by education"
+        },
+        {
+          "type": "tableEx",
+          "title": "Audience sample sizes"
+        }
+      ]
+    },
+    {
+      "name": "Contact strategy & quality",
+      "id": "5b2a74e7bdbfdf87732d",
+      "visuals": 16,
+      "kpis": [
+        "Average Call Seconds",
+        "Not Recorded Share",
+        "Duplicate Signatures",
+        "Average Prior Gap Days"
+      ],
+      "charts": [
+        {
+          "type": "clusteredColumnChart",
+          "title": "Conversion by contact intensity"
+        },
+        {
+          "type": "clusteredBarChart",
+          "title": "Previous outcome versus conversion"
+        },
+        {
+          "type": "clusteredColumnChart",
+          "title": "Missing-field coverage by job"
+        },
+        {
+          "type": "tableEx",
+          "title": "Quality and conversion"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    [
+      "FactCampaign",
+      "Job",
+      "DimJob",
+      "Job"
+    ],
+    [
+      "FactCampaign",
+      "Education",
+      "DimEducation",
+      "Education"
+    ],
+    [
+      "FactCampaign",
+      "ContactChannel",
+      "DimContact",
+      "ContactChannel"
+    ],
+    [
+      "FactCampaign",
+      "Month",
+      "DimMonth",
+      "Month"
+    ],
+    [
+      "FactCampaign",
+      "AgeBand",
+      "DimAgeBand",
+      "AgeBand"
+    ]
+  ],
+  "measures": 13,
+  "native_visuals_only": true,
+  "source_format": "PBIP + PBIR + TMSL",
+  "desktop_validation": "Not executed; Power BI Desktop unavailable in this environment"
+}

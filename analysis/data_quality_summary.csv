@@ -1,0 +1,5 @@
+measure,value
+source_rows,41188
+clean_rows,41188
+duplicate_signatures_retained,12
+contact_records_with_unknown_fields,10700

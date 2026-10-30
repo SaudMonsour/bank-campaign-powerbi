@@ -1,0 +1,13 @@
+{
+  "checks_passed": [
+    "clean row total",
+    "structural sentinel preserved",
+    "duplicate signatures retained",
+    "subscription outcome agreement",
+    "actual prior gaps preserved",
+    "portable Python path configuration",
+    "raw source bytes match archive manifest"
+  ],
+  "count": 7,
+  "desktop_engine_not_tested": true
+}

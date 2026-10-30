@@ -1,0 +1,13 @@
+ContactRowKey,Age,Job,MaritalStatus,Education,CreditDefault,HousingLoan,PersonalLoan,ContactChannel,Month,Weekday,DurationSeconds,CampaignContacts,DaysSincePrevious,PreviousContacts,PreviousOutcome,EmploymentVariationRate,ConsumerPriceIndex,ConsumerConfidenceIndex,Euribor3M,EmploymentCount,SubscriptionOutcome,ExactDuplicateFlag,PreviouslyContacted,Subscribed,AgeBand,MonthNumber,WeekdayOrder,ContactIntensity,UnknownFieldCount,HasUnknown
+1268,39,blue-collar,married,basic.6y,no,no,no,telephone,May,Thu,124,1,,0,nonexistent,1.100000,93.994000,-36.400000,4.855000,5191.000000,no,1,0,0,30–39,5,4,1 contact,0,0
+12263,36,retired,married,Not recorded,no,no,no,telephone,Jul,Thu,88,1,,0,nonexistent,1.400000,93.918000,-42.700000,4.966000,5228.100000,no,1,0,0,30–39,7,4,1 contact,1,1
+14236,27,technician,single,professional.course,no,no,no,cellular,Jul,Mon,331,2,,0,nonexistent,1.400000,93.918000,-42.700000,4.962000,5228.100000,no,1,0,0,Under 30,7,1,2–3 contacts,0,0
+16958,47,technician,divorced,high.school,no,yes,no,cellular,Jul,Thu,43,3,,0,nonexistent,1.400000,93.918000,-42.700000,4.962000,5228.100000,no,1,0,0,40–49,7,4,2–3 contacts,0,0
+18467,32,technician,single,professional.course,no,yes,no,cellular,Jul,Thu,128,1,,0,nonexistent,1.400000,93.918000,-42.700000,4.968000,5228.100000,no,1,0,0,30–39,7,4,1 contact,0,0
+20218,55,services,married,high.school,Not recorded,no,no,cellular,Aug,Mon,33,1,,0,nonexistent,1.400000,93.444000,-36.100000,4.965000,5228.100000,no,1,0,0,50–59,8,1,1 contact,1,1
+20536,41,technician,married,professional.course,no,yes,no,cellular,Aug,Tue,127,1,,0,nonexistent,1.400000,93.444000,-36.100000,4.966000,5228.100000,no,1,0,0,40–49,8,2,1 contact,0,0
+25219,39,admin.,married,university.degree,no,no,no,cellular,Nov,Tue,123,2,,0,nonexistent,-0.100000,93.200000,-42.000000,4.153000,5195.800000,no,1,0,0,30–39,11,2,2–3 contacts,0,0
+28479,24,services,single,high.school,no,yes,no,cellular,Apr,Tue,114,1,,0,nonexistent,-1.800000,93.075000,-47.100000,1.423000,5099.100000,no,1,0,0,Under 30,4,2,1 contact,0,0
+32518,35,admin.,married,university.degree,no,yes,no,cellular,May,Fri,348,4,,0,nonexistent,-1.800000,92.893000,-46.200000,1.313000,5099.100000,no,1,0,0,30–39,5,5,4–6 contacts,0,0
+36953,45,admin.,married,university.degree,no,no,no,cellular,Jul,Thu,252,1,,0,nonexistent,-2.900000,92.469000,-33.600000,1.072000,5076.200000,yes,1,0,1,40–49,7,4,1 contact,0,0
+38283,71,retired,single,university.degree,no,no,no,telephone,Oct,Tue,120,1,,0,nonexistent,-3.400000,92.431000,-26.900000,0.742000,5017.500000,no,1,0,0,60+,10,2,1 contact,0,0

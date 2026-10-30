@@ -1,0 +1,4 @@
+PreviousOutcome,ContactRecords,Subscriptions,ConversionRate,MeanDurationSeconds,Wilson95Lower,Wilson95Upper,SmallSampleFlag
+failure,4252,605,0.142286,248.112888,0.132108,0.153110,False
+nonexistent,35563,3141,0.088322,257.082192,0.085417,0.091316,False
+success,1373,894,0.651129,320.941733,0.625528,0.675886,False

@@ -1,0 +1,321 @@
+{
+  "before": [
+    {
+      "column": "age",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 78
+    },
+    {
+      "column": "job",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 12
+    },
+    {
+      "column": "marital",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 4
+    },
+    {
+      "column": "education",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 8
+    },
+    {
+      "column": "default",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 3
+    },
+    {
+      "column": "housing",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 3
+    },
+    {
+      "column": "loan",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 3
+    },
+    {
+      "column": "contact",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 2
+    },
+    {
+      "column": "month",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 10
+    },
+    {
+      "column": "day_of_week",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 5
+    },
+    {
+      "column": "duration",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 1544
+    },
+    {
+      "column": "campaign",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 42
+    },
+    {
+      "column": "pdays",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 27
+    },
+    {
+      "column": "previous",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 8
+    },
+    {
+      "column": "poutcome",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 3
+    },
+    {
+      "column": "emp.var.rate",
+      "dtype": "float64",
+      "missing": 0,
+      "distinct": 10
+    },
+    {
+      "column": "cons.price.idx",
+      "dtype": "float64",
+      "missing": 0,
+      "distinct": 26
+    },
+    {
+      "column": "cons.conf.idx",
+      "dtype": "float64",
+      "missing": 0,
+      "distinct": 26
+    },
+    {
+      "column": "euribor3m",
+      "dtype": "float64",
+      "missing": 0,
+      "distinct": 316
+    },
+    {
+      "column": "nr.employed",
+      "dtype": "float64",
+      "missing": 0,
+      "distinct": 11
+    },
+    {
+      "column": "y",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 2
+    }
+  ],
+  "after": [
+    {
+      "column": "ContactRowKey",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 41188
+    },
+    {
+      "column": "Age",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 78
+    },
+    {
+      "column": "Job",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 12
+    },
+    {
+      "column": "MaritalStatus",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 4
+    },
+    {
+      "column": "Education",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 8
+    },
+    {
+      "column": "CreditDefault",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 3
+    },
+    {
+      "column": "HousingLoan",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 3
+    },
+    {
+      "column": "PersonalLoan",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 3
+    },
+    {
+      "column": "ContactChannel",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 2
+    },
+    {
+      "column": "Month",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 10
+    },
+    {
+      "column": "Weekday",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 5
+    },
+    {
+      "column": "DurationSeconds",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 1544
+    },
+    {
+      "column": "CampaignContacts",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 42
+    },
+    {
+      "column": "DaysSincePrevious",
+      "dtype": "float64",
+      "missing": 39673,
+      "distinct": 26
+    },
+    {
+      "column": "PreviousContacts",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 8
+    },
+    {
+      "column": "PreviousOutcome",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 3
+    },
+    {
+      "column": "EmploymentVariationRate",
+      "dtype": "float64",
+      "missing": 0,
+      "distinct": 10
+    },
+    {
+      "column": "ConsumerPriceIndex",
+      "dtype": "float64",
+      "missing": 0,
+      "distinct": 26
+    },
+    {
+      "column": "ConsumerConfidenceIndex",
+      "dtype": "float64",
+      "missing": 0,
+      "distinct": 26
+    },
+    {
+      "column": "Euribor3M",
+      "dtype": "float64",
+      "missing": 0,
+      "distinct": 316
+    },
+    {
+      "column": "EmploymentCount",
+      "dtype": "float64",
+      "missing": 0,
+      "distinct": 11
+    },
+    {
+      "column": "SubscriptionOutcome",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 2
+    },
+    {
+      "column": "ExactDuplicateFlag",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 2
+    },
+    {
+      "column": "PreviouslyContacted",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 2
+    },
+    {
+      "column": "Subscribed",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 2
+    },
+    {
+      "column": "AgeBand",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 5
+    },
+    {
+      "column": "MonthNumber",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 10
+    },
+    {
+      "column": "WeekdayOrder",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 5
+    },
+    {
+      "column": "ContactIntensity",
+      "dtype": "object",
+      "missing": 0,
+      "distinct": 4
+    },
+    {
+      "column": "UnknownFieldCount",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 6
+    },
+    {
+      "column": "HasUnknown",
+      "dtype": "int64",
+      "missing": 0,
+      "distinct": 2
+    }
+  ],
+  "unknown_labels_explicit": true,
+  "duplicate_signatures_flagged": 12,
+  "rows_removed": 0
+}
